@@ -8,9 +8,10 @@ export default function Boshqarish() {
     <div className="p-6">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-800">Boshqarish</h1>
+
         <div className="flex space-x-6 mt-2">
-          <a
-            href="/dashboard/boshqarish/kurslar"
+          <Link
+            to="/dashboard/boshqarish/kurslar"
             className={`font-medium transition ${
               location.pathname === "/dashboard/boshqarish/kurslar"
                 ? "text-purple-600 border-b-2 border-purple-600"
@@ -18,9 +19,10 @@ export default function Boshqarish() {
             }`}
           >
             Kurslar
-          </a>
-          <a
-            href="/dashboard/boshqarish/xonalar"
+          </Link>
+
+          <Link
+            to="/dashboard/boshqarish/xonalar"
             className={`font-medium transition ${
               location.pathname === "/dashboard/boshqarish/xonalar"
                 ? "text-purple-600 border-b-2 border-purple-600"
@@ -28,7 +30,7 @@ export default function Boshqarish() {
             }`}
           >
             Xonalar
-          </a>
+          </Link>
         </div>
       </div>
 
