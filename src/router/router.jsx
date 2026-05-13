@@ -6,6 +6,9 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import Dashboard from "../pages/Dashboard";
 import Students from "../pages/Students";
 import Classes from "../pages/Classes";
+import Boshqarish from "../pages/Boshqarish";
+import Kurslar from "../pages/Kurslar";
+import Xonalar from "../pages/Xonalar";
 
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -43,6 +46,25 @@ export const router = createBrowserRouter([
       {
         path: "classes",
         element: <Classes />,
+      },
+
+      {
+        path: "boshqarish",
+        element: <Boshqarish />,
+        children: [
+          {
+            index: true,
+            element: <div className="text-gray-500">Boshqarish bo'limini tanlang: Kurslar yoki Xonalar.</div>,
+          },
+          {
+            path: "kurslar",
+            element: <Kurslar />,
+          },
+          {
+            path: "xonalar",
+            element: <Xonalar />,
+          },
+        ],
       },
     ],
   },

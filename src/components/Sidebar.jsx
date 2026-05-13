@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { 
-  HomeIcon, UsersIcon, AcademicCapIcon, 
-  UserGroupIcon, Cog6ToothIcon, ChevronLeftIcon, 
-  ChevronRightIcon, SparklesIcon 
+import {
+  HomeIcon,
+  UsersIcon,
+  AcademicCapIcon,
+  UserGroupIcon,
+  Cog6ToothIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  SparklesIcon,
 } from '@heroicons/react/24/outline';
 
 export default function Sidebar() {
@@ -13,17 +18,17 @@ export default function Sidebar() {
     { name: 'Asosiy', icon: HomeIcon, path: '/dashboard', isLink: true },
     { name: 'Sinflar', icon: AcademicCapIcon, path: '/dashboard/classes', isLink: true },
     { name: 'Talabalar', icon: UserGroupIcon, path: '/dashboard/students', isLink: true },
-    { name: "O'qituvchilar", icon: UsersIcon, path: '#', isLink: false },
-    { name: "Sovg'alar", icon: SparklesIcon, path: '#', isLink: false },
-    { name: 'Boshqarish', icon: Cog6ToothIcon, path: '#', isLink: false },
+    { name: "O'qituvchilar", icon: UsersIcon, path: null, isLink: false },
+    { name: "Sovg'alar", icon: SparklesIcon, path: null, isLink: false },
+    { name: 'Boshqarish', icon: Cog6ToothIcon, path: '/dashboard/boshqarish', isLink: true },
   ];
 
   return (
     <aside className={`relative h-screen bg-white border-r border-gray-100 transition-all duration-300 ${isOpen ? 'w-64' : 'w-20'}`}>
-      
-      <button 
+
+      <button
         onClick={() => setIsOpen(!isOpen)}
-        className="absolute -right-3 top-9 bg-purple-600 text-white rounded-md p-1 shadow-md z-50 hover:scale-110 transition-transform"
+        className="absolute -right-3 cursor-pointer top-9 bg-purple-600 text-white rounded-md p-1 shadow-md z-50 hover:scale-110 transition-transform"
       >
         {isOpen ? <ChevronLeftIcon className="w-4 h-4" /> : <ChevronRightIcon className="w-4 h-4" />}
       </button>
@@ -44,7 +49,7 @@ export default function Sidebar() {
               <NavLink
                 key={item.name}
                 to={item.path}
-                end
+                end={item.name !== 'Boshqarish'}
                 className={({ isActive }) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
               >
                 <item.icon className="w-6 h-6 shrink-0" />
@@ -65,9 +70,10 @@ export default function Sidebar() {
         })}
       </nav>
 
+
       {isOpen && (
         <div className="absolute bottom-6 left-4 right-4 p-4 bg-[#f372721a] rounded-2xl border border-[#f3727245]">
-           <div className="flex items-start gap-3 mb-3 text-xs">
+          <div className="flex items-start gap-3 mb-3 text-xs">
             <div className="p-2 bg-orange-100 rounded-lg text-lg">📄</div>
             <div>
               <p className="font-bold text-gray-800">Obuna</p>
