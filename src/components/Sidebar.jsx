@@ -16,9 +16,9 @@ export default function Sidebar() {
 
   const menuItems = [
     { name: 'Asosiy', icon: HomeIcon, path: '/dashboard', isLink: true },
-    { name: 'Sinflar', icon: AcademicCapIcon, path: '/dashboard/classes', isLink: true },
+    { name: 'Guruhlar', icon: AcademicCapIcon, path: '/dashboard/guruhlar', isLink: true },
     { name: 'Talabalar', icon: UserGroupIcon, path: '/dashboard/students', isLink: true },
-    { name: "O'qituvchilar", icon: UsersIcon, path: null, isLink: false },
+    { name: "O'qituvchilar", icon: UsersIcon, path: '/dashboard/oqituvchilar', isLink: true },
     { name: "Sovg'alar", icon: SparklesIcon, path: null, isLink: false },
     { name: 'Boshqarish', icon: Cog6ToothIcon, path: '/dashboard/boshqarish', isLink: true },
   ];

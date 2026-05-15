@@ -9,6 +9,8 @@ import Classes from "../pages/Classes";
 import Boshqarish from "../pages/Boshqarish";
 import Kurslar from "../pages/Kurslar";
 import Xonalar from "../pages/Xonalar";
+import Teachers from "../pages/Teachers";
+import Guruhlar from "../pages/Guruhlar";
 
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -46,6 +48,16 @@ export const router = createBrowserRouter([
       {
         path: "classes",
         element: <Classes />,
+      },
+
+      {
+        path: "guruhlar",
+        element: <Guruhlar />,
+      },
+
+      {
+        path: "oqituvchilar",
+        element: <Teachers />,
       },
 
       {
